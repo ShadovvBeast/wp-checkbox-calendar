@@ -14,16 +14,11 @@ function wp_checkbox_calendar_shortcode($atts) {
     return '<div id="calendar"></div>';
 }
 
-function wp_checkbox_calendar_header() {
-    ?>
-    <script src="https://bundle.run/@fullcalendar/core@4.3.1"></script>
-    <script src="https://bundle.run/@fullcalendar/daygrid@4.3.0"></script>
-    <?php
+function wp_checkbox_calendar_enqueue() {
+    wp_enqueue_script('fullcalendar-core', 'https://bundle.run/@fullcalendar/core@4.3.1');
+    wp_enqueue_script('fullcalendar-daygrid','https://bundle.run/@fullcalendar/daygrid@4.3.0');
+    wp_enqueue_script('wp-checkbox-calendar-calendar', plugins_url('/js/calendar.js', __FILE__));
+    wp_enqueue_style('wp-checkbox-calendar-style', plugins_url('wp-checkbox-calendar.css', __FILE__));
 }
-wp_register_script('fullcalendar-core', 'https://bundle.run/@fullcalendar/core@4.3.1');
-wp_register_script('fullcalendar-daygrid', 'https://bundle.run/@fullcalendar/daygrid@4.3.0');
-wp_register_script('wp-checkbox-calendar-calendar', plugins_url('/js/calendar.js', __FILE__));
-wp_enqueue_script('fullcalendar-core');
-wp_enqueue_script('fullcalendar-daygrid');
-wp_enqueue_script('wp-checkbox-calendar-calendar');
+add_action('wp_enqueue_scripts', 'wp_checkbox_calendar_enqueue');
 add_shortcode('wp-checkbox-calendar', 'wp_checkbox_calendar_shortcode');
