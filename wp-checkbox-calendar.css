@@ -1,0 +1,19 @@
+.fc-button-primary {
+    color: #fff;
+    background-color: #feab83;
+    border-color: #c8ced4;
+}
+
+.fc-button-primary:disabled {
+    color: #fff;
+    background-color: #FED5B6;
+    border-color: #c8ced4;
+}
+
+.fc-day-top {
+    font-size: 30px;
+    text-align: center;
+}
+.fc-unthemed, .fc-unthemed tbody, .fc-unthemed thead, .fc-unthemed .fc-row, .fc-head-container, .fc-widget-header, .fc-widget-content /*, .fc-unthemed th*/{
+    border-color: #fff !important;
+}
