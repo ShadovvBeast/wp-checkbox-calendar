@@ -28,12 +28,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (ajax_object.checked.length) {
         const check_dates = ajax_object.checked.map(c => c.check_date);
         const first_check_date = new Date(check_dates[0]);
-        const first_plus_week = new Date(first_check_date);
-        first_plus_week.setDate(first_plus_week.getDate() + 6);
+        const compare_date = new Date(first_check_date);
+        compare_date.setDate(compare_date.getDate() + 6);
+        while(compare_date < new Date())
+            compare_date.setDate(compare_date.getDate() + 7);
         const elements = document.querySelectorAll('.fc-day.fc-today, .fc-day.fc-future');
         for(const element of elements) {
             const date = new Date(element.dataset.date);
-            if (date <= first_plus_week) {
+            if (date <= compare_date) {
                 element.style.verticalAlign = 'bottom';
                 const checkbox = document.createElement('input');
                 checkbox.type = 'checkbox';
