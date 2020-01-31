@@ -31,7 +31,7 @@ function wp_checkbox_calendar_enqueue() {
     $user_id = get_current_user_id();
     wp_localize_script( 'wp-checkbox-calendar-calendar', 'ajax_object', [
         'ajax_url' => admin_url( 'admin-ajax.php' ),
-        'checked' => $wpdb->get_results("SELECT * FROM $table_name WHERE user_id = $user_id ORDER BY check_date DESC")]);
+        'checked' => $wpdb->get_results("SELECT * FROM $table_name WHERE user_id = $user_id ORDER BY check_date ASC")]);
     wp_enqueue_style('wp-checkbox-calendar-style', plugins_url('wp-checkbox-calendar.css', __FILE__));
 }
 
