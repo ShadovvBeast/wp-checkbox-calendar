@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!calendarEl)
         return;
     async function checkDate(date) {
-        await (await fetch(ajax_object.ajax_url, {
+        await (await fetch(calendar_ajax_object.ajax_url, {
             method: 'POST',
             credentials: 'same-origin',
             headers: {
@@ -40,8 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 })
             });
-            if (ajax_object.checked.length) {
-                const check_dates = ajax_object.checked.map(c => c.check_date);
+            if (calendar_ajax_object.checked.length) {
+                const check_dates = calendar_ajax_object.checked.map(c => c.check_date);
                 const first_check_date = new Date(check_dates[0]);
                 const compare_date = new Date(first_check_date);
                 compare_date.setDate(compare_date.getDate() + 6);
