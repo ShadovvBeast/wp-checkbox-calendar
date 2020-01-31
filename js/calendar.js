@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const calendarEl = document.getElementById('calendar');
-
+    if (!calendarEl)
+        return;
     async function checkDate(date) {
         await (await fetch(ajax_object.ajax_url, {
             method: 'POST',
