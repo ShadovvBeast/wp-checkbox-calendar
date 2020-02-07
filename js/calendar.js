@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.elementor-element-f9066e9').style.display = 'none';
+    document.querySelector('.elementor-element-54ef6a4').style.display = 'none';
     document.querySelector('.elementor-element-a549e67').style.display = 'none';
     const calendarEl = document.getElementById('calendar');
     if (!calendarEl)
@@ -35,15 +36,23 @@ document.addEventListener('DOMContentLoaded', function() {
             switch (week_index) {
                 case 0:
                     document.querySelector('.elementor-element-f9066e9').style.display = 'none';
+                    document.querySelector('.elementor-element-54ef6a4').style.display = 'none';
                     document.querySelector('.elementor-element-a549e67').style.display = 'none';
                     break;
                 case 1:
+                    document.querySelector('.elementor-element-f9066e9').style.display = 'none';
+                    document.querySelector('.elementor-element-54ef6a4').style.display = 'block';
                     document.querySelector('.elementor-element-a549e67').style.display = 'none';
-                    document.querySelector('.elementor-element-a549e67').style.display = 'block';
                     break;
                 case 2:
-                    document.querySelector('.elementor-element-f9066e9').style.display = 'block';
+                    document.querySelector('.elementor-element-f9066e9').style.display = 'none';
+                    document.querySelector('.elementor-element-54ef6a4').style.display = 'none';
+                    document.querySelector('.elementor-element-a549e67').style.display = 'block';
                     break;
+                default:
+                    document.querySelector('.elementor-element-f9066e9').style.display = 'block';
+                    document.querySelector('.elementor-element-54ef6a4').style.display = 'block';
+                    document.querySelector('.elementor-element-a549e67').style.display = 'block';
             }
             const elements = document.querySelectorAll('.fc-day');
             for (const element of elements) {
