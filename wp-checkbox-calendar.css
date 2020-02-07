@@ -1,3 +1,10 @@
+.fc-header-toolbar {
+    font-size: 15px;
+}
+.fc-row.fc-widget-header > table {
+    margin: 0;
+    font-size: 15px;
+}
 .fc-button-primary {
     color: #fff;
     background-color: #feab83;
@@ -11,10 +18,12 @@
 }
 
 .fc-day-top {
-    font-size: 30px;
+    font-size: 15px;
     text-align: center;
 }
-
+.fc-body .fc-content-skeleton > table {
+    margin-bottom: 30px;
+}
 .fc-unthemed, .fc-unthemed tbody, .fc-unthemed thead, .fc-unthemed .fc-row, .fc-head-container, .fc-widget-header, .fc-widget-content /*, .fc-unthemed th*/{
     border-color: #fff !important;
 }

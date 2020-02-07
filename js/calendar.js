@@ -20,7 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
         plugins: [FullCalendarDayGrid.default, FullCalendarInteraction.default],
         defaultView: 'dayGridMonth',
         height: 'auto',
+        contentHeight: 'auto',
+        aspectRatio: 1,
         fixedWeekCount: false,
+        dayNames: ['z1','z2','z3','z4','z5','z6','z7'],
+        dayNamesShort: ['z1','z2','z3','z4','z5','z6','z7'],
         dateClick: async function(info) {
             const today = new Date();
             today.setHours(0,0,0,0);
