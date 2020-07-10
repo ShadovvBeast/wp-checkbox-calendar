@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="e624f1e9-ad3c-4fea-9f88-f3f5ddaa6b0c" name="Ipage(netasfactory)" url="http://netasfactory.co.il/">
+        <fileTransfer host="ftp.ipage.com" port="21" rootFolder="/netasfactory/wp-content/plugins/wp-checkbox-calendar">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

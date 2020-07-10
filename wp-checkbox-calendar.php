@@ -17,6 +17,7 @@ function wp_checkbox_get_checked() {
     $table_name = $wpdb->prefix . 'cc_checks';
     $user_id = get_current_user_id();
     return $wpdb->get_results("SELECT * FROM $table_name WHERE user_id = $user_id ORDER BY check_date ASC");
+
 }
 function wp_checkbox_check() {
     global $wpdb;
@@ -32,11 +33,11 @@ function wp_checkbox_calendar_enqueue() {
     wp_enqueue_script('fullcalendar-daygrid', 'https://unpkg.com/@fullcalendar/daygrid/main.min.js');
     //wp_enqueue_style('fullcalendar-daygrid', 'https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.3.0/main.min.css');
     wp_enqueue_script('fullcalendar-interactions', 'https://unpkg.com/@fullcalendar/interaction/main.min.js');
-    //wp_enqueue_script('wp-checkbox-calendar-calendar', plugins_url('/js/calendar.js', __FILE__));
 
-//    wp_localize_script( 'wp-checkbox-calendar-calendar', 'calendar_ajax_object', [
- //       'ajax_url' => admin_url( 'admin-ajax.php' ),
- //       'checked' => wp_checkbox_get_checked()]);
+    wp_enqueue_script('wp-checkbox-calendar-calendar', plugins_url('/js/calendar.js', __FILE__));
+    wp_localize_script( 'wp-checkbox-calendar-calendar', 'calendar_ajax_object', [
+        'ajax_url' => admin_url( 'admin-ajax.php' ),
+        'checked' => wp_checkbox_get_checked()]);
     wp_enqueue_style('wp-checkbox-calendar-style', plugins_url('wp-checkbox-calendar.css', __FILE__));
 }
 
