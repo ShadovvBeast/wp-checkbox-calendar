@@ -26,12 +26,12 @@ function wp_checkbox_check() {
 }
 
 function wp_checkbox_calendar_enqueue() {
-    wp_enqueue_script('fullcalendar-core', 'https://unpkg.com/@fullcalendar/core/main.min.js');
+    wp_enqueue_script('fullcalendar-core', 'https://unpkg.com/@fullcalendar/core@4.3.1/main.min.js');
     wp_enqueue_style('fullcalendar-core', 'https://unpkg.com/@fullcalendar/core@4.3.1/main.min.css');
     wp_enqueue_script('fullcalendar-core-locales-he', 'https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.3.1/locales/he.js');
-    wp_enqueue_script('fullcalendar-daygrid', 'https://unpkg.com/@fullcalendar/daygrid/main.min.js');
+    wp_enqueue_script('fullcalendar-daygrid', 'https://unpkg.com/@fullcalendar/daygrid@4.3.0/main.min.js');
     //wp_enqueue_style('fullcalendar-daygrid', 'https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.3.0/main.min.css');
-    wp_enqueue_script('fullcalendar-interactions', 'https://unpkg.com/@fullcalendar/interaction/main.min.js');
+    wp_enqueue_script('fullcalendar-interactions', 'https://unpkg.com/@fullcalendar/interaction@4.3.0/main.min.js');
     wp_enqueue_script('wp-checkbox-calendar-calendar', plugins_url('/js/calendar.js', __FILE__));
 
     wp_localize_script( 'wp-checkbox-calendar-calendar', 'calendar_ajax_object', [
